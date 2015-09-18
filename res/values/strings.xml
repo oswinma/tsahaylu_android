@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tsahaylu</string>
+    <string name="welcome">Welcome to Tsahaylu World!</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="login">Log In</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="action_settings">setting</string>
+    <string name="tab_new">New</string>
+    <string name="tab_archive">Archive</string>
+    <string name="tab_favorites">Favorites</string>
+    <string name="str_hint_login">Please input your email</string>
+    <string name="str_remember_pwd">Remember Password</string>
+    <string name="str_auto_login">Login auto</string>
+    <string name="str_forget_passwd">Forget password?</string>
+    <string name="str_login_success">Login Success</string>
+    <string name="str_login">Login</string>
+    <string name="str_hint_passwd">Please input your password</string>
+    <string name="pull_to_refresh_pull_label">Pull to refresh...</string>
+    <string name="pull_to_refresh_release_label">Release to refresh...</string>
+    <string name="pull_to_refresh_refreshing_label">Loading...</string>
+    <string name="pull_to_refresh_tap_label">Tap to refresh...</string>
+    <string name="title_activity_favurl_detail">FavurlDetailActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity__user_profile">Profile</string>
+    <string name="clear_cache_menu">Clear Caches</string>
+    <string name="clear_cache_complete_toast">Caches have been cleared</string>
+    <string name="imageview_description">Image Thumbnail</string>
+    <string name="no_network_connection_toast">No network connection found</string>
+    <string name="title_activity_welcome">Activity_Welcome</string>
+    <string name="sign_up">Sign up using email</string>
+    <string name="facebook_app_id">141416579340734</string>
+    <string name="title_activity_twitter">Activity_twitter</string>
+    <string name="Signup_email">Email:</string>
+    <string name="Signup_nickname">Nickname:</string>
+    <string name="Signup_country">Country:</string>
+    <string name="Signup_password">Password:</string>
+    <string name="Signup_passwordrepeat">Repeat Password:</string>
+    <string name="Signup_signupbtn">Sign Up</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_message">Messages</string>
+    <string name="title_activity_find_friends">Find Friends</string>
+    <string name="action_search">Search</string>
+    <string name="title_activity__search">Activity_Search</string>
+    <string name="search_hint">Search Tsahaylu</string>
+    <string name="share_title">SAHRES</string>
+    <string name="fav_title">FAVORITES</string>
+    <string name="title_activity_share_page">Share to Tsahaylu</string>
+    <string name="title_activity_activity__share_by_user">ShareBy</string>
+    <string name="title_activity_activity__fav_by_user">FavoriteBy</string>
+    <string name="title_activity_activity__my_friends">MyFriends</string>
+    <string name="title_activity_activity__friends_selector">Activity_FriendsSelector</string>
+    <string name="title_activity_activity__group_detail">GroupDetail</string>
+
+</resources>

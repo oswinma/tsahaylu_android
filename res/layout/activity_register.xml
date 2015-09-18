@@ -1,0 +1,136 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="fill_horizontal"
+    android:onClick="Signup"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+	<TextView
+	    android:id="@+id/email"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+	    android:layout_gravity="right"
+	    android:text="@string/Signup_email"
+	    android:textSize="20sp" />
+          	
+          	<EditText
+          	    android:id="@+id/email_edit"
+          	    android:layout_width="fill_parent"
+          	    android:layout_height="fill_parent"
+          	    android:inputType="textEmailAddress"
+          	    android:maxLines="1"
+          	    android:textColor="@color/black"
+          	    
+          	    android:textSize="20sp" />
+
+    </LinearLayout>
+          	
+          	    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+
+			<TextView
+			    android:id="@+id/nickname"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+			    android:layout_gravity="right"
+			    android:text="@string/Signup_nickname"
+			    android:textSize="20sp" />
+          	
+          	<EditText
+          	    android:id="@+id/nickname_edit"
+          	    android:layout_width="fill_parent"
+          	    android:layout_height="fill_parent"
+          	    android:inputType="text"
+          	    android:maxLines="1"
+          	    android:textColor="@color/black"
+          	    android:textSize="20sp" />
+
+          	</LinearLayout>
+          	
+          	        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"        
+        android:orientation="horizontal" >
+         	<TextView
+         	    android:id="@+id/country"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+         	    android:textSize="20sp"
+         	    android:text="@string/Signup_country" />
+          	
+          	<EditText 
+          	    android:id="@+id/country_edit"      
+          	    android:layout_width="fill_parent"
+    			android:layout_height="fill_parent"    
+    			android:textSize="20sp"
+    			android:textColor="@color/black"
+    			android:maxLines="1"	    
+          	 />
+          	</LinearLayout>
+          	    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+           	<TextView
+           	    android:id="@+id/password"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+           	    android:textSize="20sp"
+           	    android:text="@string/Signup_password" />
+          	
+          	<EditText
+          	    android:id="@+id/password_edit"
+          	    android:layout_width="fill_parent"
+          	    android:layout_height="fill_parent"
+          	    android:inputType="textPassword"
+          	    android:maxLines="1"
+          	    android:textColor="@color/black"
+          	    android:textSize="20sp" />
+
+          	</LinearLayout>
+          	
+          	        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal" >
+          	
+          	<TextView
+          	    android:id="@+id/password_confirm"
+	    android:layout_width="wrap_content"
+	    android:layout_height="fill_parent"
+          	    android:textSize="20sp"
+          	    android:text="@string/Signup_passwordrepeat" />
+          	
+          	<EditText
+          	    android:id="@+id/password_confirm_edit"
+          	    android:layout_width="fill_parent"
+          	    android:layout_height="fill_parent"
+          	    android:inputType="textPassword"
+          	    android:maxLines="1"
+          	    android:textColor="@color/black"
+          	    android:textSize="20sp" />
+
+          	</LinearLayout>
+
+          	        <Button
+          	            android:id="@+id/btn_signup"
+          	            android:layout_width="wrap_content"
+          	            android:layout_height="wrap_content"
+          	            android:onClick="Signup"
+          	            android:text="@string/Signup_signupbtn"
+          	            android:textSize="20sp" />
+
+</LinearLayout>

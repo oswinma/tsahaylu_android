@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/totextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TO:" />
+    
+        <TextView
+            android:id="@+id/tolist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:clickable="true"
+            android:text="All" />
+
+		<Button
+		    android:id="@+id/confirmbtn"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="ConfrimSelected"
+		    android:text="Confirm"
+		    android:textSize="13sp" >
+		    
+		</Button>                
+    </LinearLayout>
+    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Groups" />
+
+    <GridLayout
+        android:id="@+id/group_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:cacheColorHint="#00000000"  
+		android:listSelector="#00000000"   
+		android:verticalSpacing="35px" 
+		android:horizontalSpacing="5px" 
+		android:numColumns="auto_fit" 
+		android:columnWidth="100px" 
+	    android:gravity="center" />  
+	          
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Friends" />
+        
+    <GridLayout
+        android:id="@+id/friend_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+		android:cacheColorHint="#00000000"  
+		android:listSelector="#00000000"   
+		android:verticalSpacing="35px" 
+		android:horizontalSpacing="5px" 
+		android:numColumns="auto_fit" 
+		android:columnWidth="100px" 
+	    android:gravity="center" />  
+    
+</LinearLayout>
