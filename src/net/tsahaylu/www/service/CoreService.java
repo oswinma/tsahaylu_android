@@ -6,6 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -118,6 +120,18 @@ public class CoreService {
 	 {
 		 favdiskcache.putFavurlshowlist(key, list);
 	 }
+	 
+	 
+	 public String getstartCursor(String key) 
+	 {
+		 return favdiskcache.getstartCursor(key);
+	 }
+	 
+	 public void putstartCursor(final String key, final String startCursor) 
+	 { 
+		 favdiskcache.putstartCursor(key, startCursor);
+	 }
+	    
 		
 	public static void addStringRequestToQueue(StringRequest stringRequest)
 	{
@@ -396,9 +410,7 @@ public class CoreService {
 	
 	public void ToggleArchive(String favurlid)
 	{
-		
-		boolean result=false;
-		
+				
 		String url =Constants.URL_HOST+Constants.URL_FAVURL_STATUS;		
 		Map<String, String> params = new HashMap<String, String>();
 			

@@ -1,12 +1,14 @@
 package net.tsahaylu.www.ui;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import net.tsahaylu.www.R;
-import net.tsahaylu.www.common.Constants;
 import net.tsahaylu.www.dto.UserDTO;
 import net.tsahaylu.www.service.CoreService;
 import net.tsahaylu.www.util.MyApp;
 import android.app.ActionBar;
-import android.app.ActionBar.Tab;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -20,11 +22,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
-public class Activity_Main extends FragmentActivity implements ActionBar.TabListener {
+public class Activity_Main extends FragmentActivity{
 	
-    private Fragment_NewFavrurl newFragment = new Fragment_NewFavrurl();  
-    private Fragment_ArchiveFavrurl archiveFragment = new Fragment_ArchiveFavrurl();  
-    private Fragment_FavFavrurl favFragement = new Fragment_FavFavrurl();  
+    private Fragment_NewFavrurl newFragment ;  
+    private Fragment_ArchiveFavrurl archiveFragment ;  
+    private Fragment_FavFavrurl favFragement;  
+    private List<Fragment> fragmentList = new ArrayList<Fragment>();
+    private List<String>   titleList    = new ArrayList<String>();
     
     private ViewPager mViewPager;  
     private ViewPagerAdapter mViewPagerAdapter; 
@@ -51,7 +55,6 @@ public class Activity_Main extends FragmentActivity implements ActionBar.TabList
     private void initView(){
     	setUpActionBar();
     	setUpViewPager();
-    	setUpTabs();
     	
     	CoreService cs=CoreService.getCoreService();
     	cs.initRequestQueue(this);    	
@@ -59,63 +62,27 @@ public class Activity_Main extends FragmentActivity implements ActionBar.TabList
     
     private void setUpActionBar() {  
         final ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
-
     }  
-    
-    
-    private void setUpTabs() {  
-        final ActionBar actionBar = getActionBar();
-        ActionBar.Tab newtab=actionBar.newTab();
-        ActionBar.Tab archivetab=actionBar.newTab();
-        ActionBar.Tab favtab=actionBar.newTab();
-        newtab.setText("New");
-        archivetab.setText("Archive");
-        favtab.setText("Favorites");
-        newtab.setTabListener(this);
-        archivetab.setTabListener(this);
-        favtab.setTabListener(this);
-        
-        actionBar.addTab(newtab);
-        actionBar.addTab(archivetab);
-        actionBar.addTab(favtab);       
    
-    }  
-    
-    
-    
-    private void setUpViewPager() {  
+    private void setUpViewPager() {      	
+    	
+        newFragment = new Fragment_NewFavrurl();  
+        archiveFragment = new Fragment_ArchiveFavrurl();  
+        favFragement = new Fragment_FavFavrurl();          
+    	
+        fragmentList.add(newFragment);
+        fragmentList.add(archiveFragment);
+        fragmentList.add(favFragement);
+        titleList.add(getString(R.string.tab_new));
+        titleList.add(getString(R.string.tab_archive));
+        titleList.add(getString(R.string.tab_favorites));
+   	
         mViewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager()); 
         
         mViewPager = (ViewPager)findViewById(R.id.pager);  
         mViewPager.setAdapter(mViewPagerAdapter);  
-        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {  
-            @Override  
-            public void onPageSelected(int position) {  
-                final ActionBar actionBar = getActionBar();  
-                actionBar.setSelectedNavigationItem(position);  
-            }  
-              
-            @Override  
-            public void onPageScrollStateChanged(int state) {  
-                switch(state) {  
-                    case ViewPager.SCROLL_STATE_IDLE:  
-                        //TODO  
-                        break;  
-                    case ViewPager.SCROLL_STATE_DRAGGING:  
-                        //TODO  
-                        break;  
-                    case ViewPager.SCROLL_STATE_SETTLING:  
-                        //TODO  
-                        break;  
-                    default:  
-                        //TODO  
-                        break;  
-                }  
-            }  
-        });  
-    }  
+   }  
     
 	
 	@Override
@@ -170,7 +137,6 @@ public class Activity_Main extends FragmentActivity implements ActionBar.TabList
 	    
 	    MenuItem searchItem = menu.findItem(R.id.action_search);  
 	    SearchView searchView = (SearchView) searchItem.getActionView();  
-
 	    return true;  
 	  }
 	
@@ -191,63 +157,21 @@ public class Activity_Main extends FragmentActivity implements ActionBar.TabList
         @Override  
         public Fragment getItem(int position) {  
             // TODO Auto-generated method stub  
-            switch (position) {  
-                case Constants.TAB_INDEX_ONE:  
-                    return newFragment;  
-                case Constants.TAB_INDEX_TWO:  
-                    return archiveFragment;  
-                case Constants.TAB_INDEX_THREE:  
-                    return favFragement;  
-            }  
-            throw new IllegalStateException("No fragment at position " + position);  
+        	return (fragmentList == null || fragmentList.size() == 0) ? null : fragmentList.get(position);
         }  
   
         @Override  
         public int getCount() {  
             // TODO Auto-generated method stub  
-            return Constants.TAB_INDEX_COUNT;  
+        	return fragmentList == null ? 0 : fragmentList.size();
         }  
           
         @Override  
         public CharSequence getPageTitle(int position) {  
-            String tabLabel = null;  
-            switch (position) {  
-                case Constants.TAB_INDEX_ONE:  
-                    tabLabel = getString(R.string.tab_new);  
-                    break;  
-                case Constants.TAB_INDEX_TWO:  
-                    tabLabel = getString(R.string.tab_archive);  
-                    break;  
-                case Constants.TAB_INDEX_THREE:  
-                    tabLabel = getString(R.string.tab_favorites);  
-                    break;  
-            }  
-            return tabLabel;  
+        	return (titleList.size() > position) ? titleList.get(position) : "";
         }
         	    
     }
-
-	@Override
-	public void onTabReselected(Tab arg0, android.app.FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	@Override
-	public void onTabSelected(Tab tab, android.app.FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
-		mViewPager.setCurrentItem(tab.getPosition()); 
-
-        
-	}
-
-
-	@Override
-	public void onTabUnselected(Tab arg0, android.app.FragmentTransaction arg1) {
-		// TODO Auto-generated method stub
-		
-	}  
 	
     @Override  
     protected void onActivityResult(int requestCode, int resultCode, Intent data)  

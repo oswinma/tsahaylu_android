@@ -61,6 +61,7 @@ public class Activity_FavurlDetail extends Activity implements OnRefreshListener
 	private EditText inputv ;
   	private boolean isRefreshing=false;
   	private static Handler handler=new Handler();
+  	private ArrayList<FavURLShow> fuslist;
   	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -95,6 +96,7 @@ public class Activity_FavurlDetail extends Activity implements OnRefreshListener
     	Bundle data = getIntent().getExtras(); 
     	favurlshow = (FavURLShow) data.getSerializable("FavURLShow");
     	position = data.getInt("position");
+    	fuslist = (ArrayList<FavURLShow>) data.getSerializable("fuslist");
     	
 	        	 if (favurlshow!=null)
 	        	 {
@@ -306,7 +308,33 @@ public class Activity_FavurlDetail extends Activity implements OnRefreshListener
 	public void ToggleArchive(View view)
 	{
 	
-		cs.ToggleArchive(favurlshow.getId().toString());
+		String favurlid=favurlshow.getId().toString();		
+		
+		String url =Constants.URL_HOST+Constants.URL_FAVURL_STATUS;		
+		Map<String, String> params = new HashMap<String, String>();
+			
+		String json= "[{'id':"+favurlid+",'status':2}]";		
+		params.put("json", json);
+		
+		StringRequest stringRequest = new StringRequest(Method.POST, url, params, new Listener<String>(){
+
+			@Override
+			public void onResponse(String json) {
+				// TODO Auto-generated method stub
+				fuslist.remove(favurlshow);				
+			}},new ErrorListener(){
+
+			@Override
+			public void onErrorResponse(VolleyError error) {
+				// TODO Auto-generated method stub
+				
+			}}){  
+			
+
+		};  
+		
+		cs.addStringRequestToQueue(stringRequest);
+
 	}
 	
 	

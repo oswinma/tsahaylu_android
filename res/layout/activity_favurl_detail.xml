@@ -153,8 +153,8 @@
 
             <ImageButton
                 android:id="@+id/btn_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
                 android:onClick="ToggleDelete"
                 android:src="@android:drawable/ic_menu_delete"
                 android:text="Delete"
@@ -170,8 +170,8 @@
 
             <ImageButton
                 android:id="@+id/btn_share"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
                 android:onClick="ToggleShare"
                 android:src="@android:drawable/ic_menu_share"
                 android:text="share"

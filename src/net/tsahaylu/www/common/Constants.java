@@ -68,22 +68,17 @@ public class Constants {
   
     public static final String EMAILADDPATTERN = "\\b(^['_A-Za-z0-9-]+(\\.['_A-Za-z0-9-]+)*@([A-Za-z0-9-])+(\\.[A-Za-z0-9-]+)*((\\.[A-Za-z0-9]{2,})|(\\.[A-Za-z0-9]{2,}\\.[A-Za-z0-9]{2,}))$)\\b";
 
-    public static final int TAB_INDEX_COUNT = 3;  
-    
+    public static final int TAB_INDEX_COUNT = 3;      
     public static final int TAB_INDEX_ONE = 0;  
     public static final int TAB_INDEX_TWO = 1;  
     public static final int TAB_INDEX_THREE = 2; 
-    public static final String URL_CHECKUSER = "/android/user/check"; 
-
-    public static final String URL_NEW ="/favurl/new";
     
     public static final String BITMAP_CACHE_DIR ="bitmap";
     public static final int BITMAP_CACHE_MAX_SIZE =10 * 1024 * 1024;
 	public static final long FAVURL_CACHE_MAX_SIZE = 0;
 	public static final String FAVURL_CACHE_DIR = "object";
 	public static final String URL_PARAMETER_TWITTER_OAUTH_VERIFIER = "oauth_verifier";
-	public static final String URL_OPENIDOAUTH = "/android/openidOAuth";
-	
+	public static final String URL_OPENIDOAUTH = "/android/openidOAuth";	
 	
 	public static final String USERDTO_ID = "id";
 	public static final String USERDTO_EMAIL = "email";
@@ -94,40 +89,31 @@ public class Constants {
 	public static final String USERDTO_STATUS = "status";
 	public static final String OPENID_PROVIDER_TWITTER = "twitter";
 	public static final String OPENID_PROVIDER_FACEBOOK= "facebook";
-	public static final String OPENID_PROVIDER_GOOGLE = "google";
+	public static final String OPENID_PROVIDER_GOOGLE = "google";	
+	
+    public static final String URL_CHECKUSER = "/android/user/check"; 
+    public static final String URL_NEW ="/favurl/new";
+    public static final String URL_ARCHIVE ="/favurl/archive";
+    public static final String URL_FAV ="/favurl/fav";
 	public static final String URL_OPENIDSIGNUP = "/android/openidsignup";
 	public static final String URL_NORMALSIGNUP = "/user/create";
 	public static final String URL_COMMENT = "/comment/pub/url";
-
 	public static final String URL_FAVURL_MY = "/favurl/my";
-
 	public static final String URL_FRIEND_USEID = "/friend/info";
-
 	public static final String URL_MESSAGE = "/message";
-
 	public static final String URL_COMMENT_ADD = "/comment/add";
-
 	public static final String URL_FAVURL_STATUS = "/favurl/status";
-
 	public static final String URL_FAVURL_FAV_UPDATE = "/favurl/fav/update";
-
 	public static final String URL_FAVURL_NEWCOMING = "/favurl/newcoming";
-
 	public static final String URL_USER_SHARE = "/user/share";	
 	public static final String URL_USER_FAV = "/user/fav";
 	public static final String URL_FRIEND_INVITE = "/friend/invite";
 	public static final String URL_FRIEND_DELETE = "/friend/delete";
-
 	public static final String URL_FRIEND_BLOCK = "/friend/block";
-
 	public static final String URL_FRIEND_POPUP = "/friend/popup";
-
 	public static final String URL_GROUP_INFO = "/group/info";
-
 	public static final String URL_GROUP_DATA = "/group/data";
-
 	public static final String URL_FRIEND_USERFRIEND = "/friend/userfriend";
-
 	public static final String URL_FAVURL_SEND = "/android/favurl/send";
 	
 }

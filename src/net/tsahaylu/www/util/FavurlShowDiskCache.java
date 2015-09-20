@@ -1,14 +1,18 @@
 package net.tsahaylu.www.util;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 
 import net.tsahaylu.www.common.Constants;
 import net.tsahaylu.www.dto.FavURLShow;
 import android.content.Context;
+
 import com.jakewharton.disklrucache.DiskLruCache;
 
 public class FavurlShowDiskCache{  
@@ -74,6 +78,63 @@ public class FavurlShowDiskCache{
     	    }}).start();
     	
     }
+    
+    
+public String getstartCursor(String key) {  
+    	
+    	String startCursor=null;
+    	
+    	try {  
+    	    DiskLruCache.Snapshot snapShot = diskCache.get(key);         
+    	    if (snapShot != null) {  
+    	    	InputStream   in = snapShot.getInputStream(0);
+    	    	ByteArrayOutputStream bos = new ByteArrayOutputStream();  
+    	    	  
+    	    	//读取缓存  
+    	    	byte[] buffer = new byte[2048];  
+    	    	int length = 0;  
+    	    	while((length = in.read(buffer)) != -1) {  
+    	    	    bos.write(buffer, 0, length);//写入输出流  
+    	    	}  
+    	    	in.close();//读取完毕，关闭输入流  
+    	    	
+    	 	   startCursor= bos.toString();
+    	 	   
+    	 	  //System.out.println("getstartCursor "+key+"|"+startCursor);
+    	    }  
+    	} catch (IOException e) {  
+    	    e.printStackTrace();  
+    	}  
+    	
+    	return startCursor;
+    }
+  
+    public void putstartCursor(final String key, final String startCursor) {  
+    	 
+    	new Thread(new Runnable() {  
+    	    @Override  
+    	    public void run() {    	    	
+    	    
+    	try {    		
+			DiskLruCache.Editor editor = diskCache.edit(key);
+			
+			 if (editor != null) {				 
+				 OutputStream   out = editor.newOutputStream(0);
+		            out.write(startCursor.getBytes());		           
+		            out.close();	            
+		            editor.commit();             
+		            //System.out.println("putstartCursor "+key+"|"+startCursor);
+	         	}  
+			 
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	    }}).start();
+    	
+    }
+    
+    
   
 }  
 

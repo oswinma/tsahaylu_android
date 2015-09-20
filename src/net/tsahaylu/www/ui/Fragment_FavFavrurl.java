@@ -1,17 +1,13 @@
 package net.tsahaylu.www.ui;
 
-import net.tsahaylu.www.R;
-import android.support.v4.app.Fragment;
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import net.tsahaylu.www.common.Constants;
 
-public class Fragment_FavFavrurl extends Fragment{
+public class Fragment_FavFavrurl extends Fragment_Favrurl {
 
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-                
-                return inflater.inflate(R.layout.fragment_favurl, null);                
-        }        
+	private static String url = Constants.URL_HOST+Constants.URL_FAV;
+		
+		public Fragment_FavFavrurl()
+		{
+			super(url,"fav");			
+		}                  
 }
