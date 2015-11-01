@@ -135,45 +135,53 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 	
-            <Button
+            <ImageButton
                 android:id="@+id/btn_Archive"
-                android:layout_width="50dp"
+                android:layout_width="wrap_content"
                 android:layout_height="30dp"
+                android:background="#00000000"
                 android:onClick="ToggleArchive"
+                android:src="@drawable/ic_archive_black_36dp"
                 android:text="Archive"
                 android:textSize="10sp" />
                         
-            <Button
+            <ImageButton
                 android:id="@+id/btn_fav"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                 android:textSize="10sp"
-                 android:onClick="ToggleFav" 
-                android:text="Fav" />
+                android:background="#00000000"
+                android:onClick="ToggleFav"
+                android:src="@drawable/ic_star_black_24dp"
+                android:text="Fav"
+                android:textSize="10sp" />
 
             <ImageButton
                 android:id="@+id/btn_delete"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
+                android:background="#00000000"
+                android:src="@drawable/ic_delete_black_24dp"                
                 android:onClick="ToggleDelete"
-                android:src="@android:drawable/ic_menu_delete"
                 android:text="Delete"
                 android:textSize="10sp" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/btn_reply"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
+                android:background="#00000000"
+                android:onClick="ToggleReply"
+                android:src="@drawable/ic_reply_black_24dp"
                 android:text="reply"
-                android:onClick="ToggleReply" 
                 android:textSize="10sp" />
 
             <ImageButton
                 android:id="@+id/btn_share"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
+                android:background="#00000000"
                 android:onClick="ToggleShare"
-                android:src="@android:drawable/ic_menu_share"
+                android:src="@drawable/ic_share_black_24dp"
                 android:text="share"
                 android:textSize="10sp" />
                         
@@ -216,14 +224,14 @@
 
         </EditText>
 
-
 		<ImageButton
 		    android:id="@+id/commentsubmit"
 		    android:layout_width="48dp"
 		    android:layout_height="40dp"
 		    android:layout_gravity="right"
+		    android:background="#00000000"
 		    android:onClick="CommentSubmit"
-		    android:src="@android:drawable/ic_menu_send"
+		    android:src="@drawable/ic_send_black_24dp"
 		    android:textSize="10sp" />
 
     </LinearLayout>
