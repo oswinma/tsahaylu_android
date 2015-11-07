@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="fill_horizontal"
     android:orientation="vertical"
-    tools:context="net.tsahaylu.www.ui.Activity_Welcome" >
+    tools:context="com.tsahaylu.www.ui.Activity_Welcome" >
 
     <TextView
         android:layout_width="wrap_content"

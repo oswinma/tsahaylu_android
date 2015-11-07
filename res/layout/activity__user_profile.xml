@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="net.tsahaylu.www.ui.Activity_UserProfile" >
+    tools:context="com.tsahaylu.www.ui.Activity_UserProfile" >
 
     <LinearLayout
         android:layout_width="match_parent"

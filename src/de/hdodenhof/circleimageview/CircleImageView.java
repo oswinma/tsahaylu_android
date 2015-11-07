@@ -1,6 +1,6 @@
 package de.hdodenhof.circleimageview;
 
-import net.tsahaylu.www.R;
+import com.tsahaylu.www.R;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;

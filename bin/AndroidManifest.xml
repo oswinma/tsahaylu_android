@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="net.tsahaylu.www"
+    package="com.tsahaylu.www"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,30 +14,30 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
-        android:name=".util.MyApp"
+        android:name="com.tsahaylu.www.util.MyApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
-        <activity android:name=".ui.Activity_Main" >
+        <activity android:name="com.tsahaylu.www.ui.Activity_Main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.Activity_Login" >
+        <activity android:name="com.tsahaylu.www.ui.Activity_Login" >
         </activity>
         <activity
-            android:name=".ui.Activity_FavurlDetail"
+            android:name="com.tsahaylu.www.ui.Activity_FavurlDetail"
             android:label="@string/title_activity_favurl_detail" >
         </activity>
         <activity
-            android:name=".ui.Activity_UserProfile"
+            android:name="com.tsahaylu.www.ui.Activity_UserProfile"
             android:label="@string/title_activity__user_profile" >
         </activity>
         <activity
-            android:name=".ui.Activity_Welcome"
+            android:name="com.tsahaylu.www.ui.Activity_Welcome"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -60,20 +60,20 @@
 
         <activity android:name="com.facebook.LoginActivity" >
         </activity>
-        <activity android:name=".openid.Activity_TwitterOAuth" >
+        <activity android:name="com.tsahaylu.www.openid.Activity_TwitterOAuth" >
         </activity>
-        <activity android:name=".ui.Activity_Register" >
+        <activity android:name="com.tsahaylu.www.ui.Activity_Register" >
         </activity>
         <activity
-            android:name=".ui.Activity_Message"
+            android:name="com.tsahaylu.www.ui.Activity_Message"
             android:label="@string/title_activity_message" >
         </activity>
         <activity
-            android:name=".ui.Activity_FindFriends"
+            android:name="com.tsahaylu.www.ui.Activity_FindFriends"
             android:label="@string/title_activity_find_friends" >
         </activity>
         <activity
-            android:name=".ui.Activity_Search"
+            android:name="com.tsahaylu.www.ui.Activity_Search"
             android:label="@string/title_activity__search" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -84,7 +84,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name=".ui.Activity_Settings"
+            android:name="com.tsahaylu.www.ui.Activity_Settings"
             android:label="@string/title_activity_setting"
             android:parentActivityName=".ui.Activity_Main" >
             <meta-data
@@ -92,7 +92,7 @@
                 android:value="net.tsahaylu.www.ui.Activity_Main" />
         </activity>
         <activity
-            android:name=".ui.Activity_SharePage"
+            android:name="com.tsahaylu.www.ui.Activity_SharePage"
             android:label="@string/title_activity_share_page" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -103,15 +103,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.Activity_ShareByUser"
+            android:name="com.tsahaylu.www.ui.Activity_ShareByUser"
             android:label="@string/title_activity_activity__share_by_user" >
         </activity>
         <activity
-            android:name=".ui.Activity_FavByUser"
+            android:name="com.tsahaylu.www.ui.Activity_FavByUser"
             android:label="@string/title_activity_activity__fav_by_user" >
         </activity>
         <activity
-            android:name=".ui.Activity_MyFriends"
+            android:name="com.tsahaylu.www.ui.Activity_MyFriends"
             android:label="@string/title_activity_activity__my_friends"
             android:parentActivityName=".ui.Activity_Main" >
             <meta-data
@@ -119,11 +119,11 @@
                 android:value="net.tsahaylu.www.ui.Activity_Main" />
         </activity>
         <activity
-            android:name=".ui.Activity_FriendsSelector"
+            android:name="com.tsahaylu.www.ui.Activity_FriendsSelector"
             android:label="@string/title_activity_activity__friends_selector" >
         </activity>
         <activity
-            android:name="net.tsahaylu.www.ui.Activity_GroupDetail"
+            android:name="com.tsahaylu.www.ui.Activity_GroupDetail"
             android:label="@string/title_activity_activity__group_detail" >
         </activity>
     </application>
